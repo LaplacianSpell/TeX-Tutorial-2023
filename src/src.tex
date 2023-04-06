@@ -1,0 +1,244 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  LaplacianSpell (c)          %
+%  pd20@mails.tsinghua.edu.cn  %
+%  限清华大学内部使用（不是）  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 导言区
+
+% 标记文章的类别
+\documentclass[12pt, letterpaper]{article}
+
+% 常见宏包的使用，zyf学长介绍
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx} % 需要使用这个包
+\usepackage{float}
+\usepackage[UTF8]{ctex}
+
+% 作者等信息
+\title{LaTeX}
+\author{Author}
+\date{March 2023} %\today
+
+%%%%我%%是%%分%%割%%线%%%%
+
+%% 主体区
+
+% 文档开始声明
+\begin{document}
+
+\maketitle
+
+% 摘要体
+\begin{abstract}
+This is a simple paragraph at the beginning of the 
+document. A brief introduction about the main subject.
+\end{abstract}
+
+% 添加目录
+\tableofcontents
+
+% 新的一页
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 节，演示空格缩进等
+\section{section on basic structure}
+
+This is a section, I added some s\ p\ a\ c\ e.
+
+And there is an indent.
+
+\noindent And I cancelled it.
+
+And the new \\ line
+
+how about new page?
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 演示次级分节，段落等
+
+% 全部不缩进了
+\setlength{\parindent}{0pt}
+
+\subsection{subsection}
+
+Yes？
+
+% 没有缩进
+No!
+
+\subsubsection{subsubsection}
+
+%保留字
+ \# \$ \% \^{} \& \_ \{ \} \~{}
+
+\paragraph{paragraph}
+
+\subparagraph{subparagraph}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 写公式
+inline $\partial_\mu A_\nu-\partial_\nu A_\mu$ form
+
+single line
+$$
+\frac{\partial^2}{\partial t^2}
+$$
+form
+
+another single line
+
+\[
+\frac{\partial^2}{\partial t^2}
+\]
+
+another single line
+
+\begin{equation}
+    \frac{\partial^2}{\partial t^2}
+\end{equation}
+
+$\alpha\beta\gamma\Omega\omega\epsilon\varepsilon\pi\varpi$
+
+$h^\prime$
+
+$\hbar\bar{h}$
+
+$\tilde{a}$
+
+$\bar{s}$
+
+$$\int\oint$$
+
+$$2^{34567} $$
+$$^3He$$  
+$$D_3$$
+$$^4_2He$$
+
+Taylor
+
+\begin{equation}
+f(x) = \sum_{i=0}^{\infty} \frac{f^{(i)}(x_0)(x-x_0)^i}{i!}
+\end{equation}
+
+$$
+\Sigma_o^\infty
+$$
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 演示字体
+
+
+\textit{words in italics}
+
+\textsl{words slanted}
+
+\textsc{words in smallcaps}
+
+\textbf{words in bold}
+
+\texttt{words in teletype}
+
+\textsf{sans serif words}
+
+\textrm{roman words}
+
+\underline{underlined words}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 表格
+
+%% 无序表格
+\begin{itemize}
+  \item[-] The individual entries are indicated with a black dot, a so-called bullet.
+  \item The text in the entries may be of any length.
+\end{itemize}
+
+
+% 有序表格（使用[]对标记进行替换）
+\begin{enumerate}
+  \item This is the first entry in our list.
+  \item[-] The list numbers increase with each entry we add.
+\end{enumerate}
+
+% 没有边框表格
+\begin{center}
+
+% 这{c c c}里面的这几个告诉的是列信息
+% c表示该列居中对齐，l，r分别表示左对齐和右对齐
+\begin{tabular}{l c c} 
+
+ cell1 & cell2 & cell3 \\ % &用来分割列，\\用来换行
+ cell4 & cell5 & cell6 \\  
+ cell7 & cell8 & cell9    
+\end{tabular}
+
+\end{center}
+
+% 有边框
+% 如果是 |c|c|c| 则会在列之间绘制竖线.
+\begin{center}
+\begin{tabular}{|c|c|c|} 
+ \hline % 表示在这里插入一个贯穿所有列的横着的分割线
+ cell1 & cell2 & cell3 \\ 
+
+\hline % 会在第一列和第二列的竖线之间插入一个横着的分割线。
+ cell4 & cell5 & cell6 \\ 
+ cell7 & cell8 & cell9 \\ 
+ \hline % 表示在这里插入一个贯穿所有列的横着的分割线；
+\end{tabular}
+\end{center}
+
+% 矩阵
+
+% 注意使用包 \usepackage{amsmath}
+
+$\begin{matrix}
+a & b \\
+c & d \\
+\end{matrix}$
+
+$\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix}$
+
+$\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}$
+
+$\begin{vmatrix}
+a & b \\
+c & d \\
+\end{vmatrix}$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% 添加图片
+
+
+% \usepackage{graphicx} % 需要使用这个包
+% \usepackage{float}
+
+\begin{figure}[H] % 这个参数是告诉编译器把图片放什么位置的，我这里是告诉他放在原地.
+  \centering % 使用命令使得图片居中对齐
+  \includegraphics[scale=0.5]{graph/logo.jpg} % 同一文档之下的图片，或者可以使用参数height=0.4 weight=0.3
+  \caption{THUPSAST} % 图的题目
+\end{figure}.
+
+
+\end{document}
